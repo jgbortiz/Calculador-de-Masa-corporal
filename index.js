@@ -28,12 +28,84 @@ const usuarioContrasena = () =>{
     alert (`Hola ${usuario}, Bienvenido a Gomelski Griil & Market`)
 }
 const saluda=(usuario)=>{
-    alert(`Bienvenido${usuario}`)
+    alert(`Bienvenido ${usuario}`)
     
 }
 pedirNombre()
 usuarioContrasena()
 saluda()
  
+//calculadora de descuentos
+/*
+let precio = parseFloat(prompt('INGRESAR PRECIO'));
 
+let descuento20 = precio - (precio  * 0.2);
 
+let descuento30 = precio - (precio  * 0.3);
+alert(`Tu descuento del 20% es de ${descuento20}`);
+alert(`Tu descuento del 30% es de ${descuento30}`);
+*/
+
+const menu = prompt("Elige el descuento a realizar\n" +
+"1-Realizar 20% de descuento\n"+
+"2-Realizar 20% de descuento\n"+
+"3-Realizar 20% de descuento\n"+
+"0-Salir\n");
+
+const  elegirOpcionUno=()=>{
+    let esCorrecto;
+    let opcion;
+    do {
+        opcion =(menu);
+
+        switch (opcion){
+            case "0":
+            case "1":
+            case "2":
+            case "3":
+                esCorrecto = true;
+                break;
+            default:
+                esCorrecto = false;
+                alert(`La opcion ${opcion} no es valida `);
+                break;
+            
+        }
+    } while (!esCorrecto);
+    return opcion;
+}
+
+const hacerUno=()=>{
+    let descuento20 = precio - (precio  * 0.2);
+    alert(`Tu descuento del 20% es de ${descuento20}`);
+}
+
+const hacerDos=()=>{
+    let descuento30 = precio - (precio  * 0.3);
+    alert(`Tu descuento del 30% es de ${descuento30}`);
+}
+const hacerTres=()=>{
+    let descuento40 = precio - (precio  * 0.4);
+    alert(`Tu descuento del 20% es de ${descuento40}`);
+}
+
+let salir = false;
+
+while (!salir){
+    let opcion = elegirOpcionMenu();
+    switch (opcion){
+        case "1":
+            hacerUno();
+            break;
+        case "2":
+            hacerDos();
+            break;
+        case "3":
+            hacerTres();
+            break;
+        case "0":
+            salir = true;
+            break;    
+
+    }
+}
