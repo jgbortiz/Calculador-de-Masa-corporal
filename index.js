@@ -19,40 +19,36 @@ const usuarioContrasena = () =>{
     usuario = prompt("Ingrese  su usuario")
     return usuario
 } 
-    let contrasena = prompt("Ingrese la contraeña")
-    while (contrasena!= "1234") {
+
+let contrasena = prompt("Ingrese la contraeña")
+
+ while (contrasena!= "1234") {
     alert("Contraseña incorresta")
     contrasena = prompt("Ingrese la contraeña")
 }   
 
-    alert (`Hola ${usuario}, Bienvenido a Gomelski Griil & Market`)
+ alert (`Hola ${usuario}, Bienvenido a Gomelski Griil & Market`)
+ 
+ saluda(usuario);
 }
 const saluda=(usuario)=>{
     alert(`Bienvenido ${usuario}`)
     
 }
+
+
 pedirNombre()
 usuarioContrasena()
-saluda()
- 
-//calculadora de descuentos
-/*
-let precio = parseFloat(prompt('INGRESAR PRECIO'));
 
-let descuento20 = precio - (precio  * 0.2);
-
-let descuento30 = precio - (precio  * 0.3);
-alert(`Tu descuento del 20% es de ${descuento20}`);
-alert(`Tu descuento del 30% es de ${descuento30}`);
-*/
+//Cotizador de descuentos
 
 const menu = prompt("Elige el descuento a realizar\n" +
 "1-Realizar 20% de descuento\n"+
-"2-Realizar 20% de descuento\n"+
-"3-Realizar 20% de descuento\n"+
+"2-Realizar 30% de descuento\n"+
+"3-Realizar 40% de descuento\n"+
 "0-Salir\n");
 
-const  elegirOpcionUno=()=>{
+const  elegirOpcionMenu=()=>{
     let esCorrecto;
     let opcion;
     do {
@@ -76,24 +72,31 @@ const  elegirOpcionUno=()=>{
 }
 
 const hacerUno=()=>{
+
     let descuento20 = precio - (precio  * 0.2);
     alert(`Tu descuento del 20% es de ${descuento20}`);
 }
 
 const hacerDos=()=>{
+
     let descuento30 = precio - (precio  * 0.3);
     alert(`Tu descuento del 30% es de ${descuento30}`);
 }
 const hacerTres=()=>{
+	 
     let descuento40 = precio - (precio  * 0.4);
-    alert(`Tu descuento del 20% es de ${descuento40}`);
+    alert(`Tu descuento del 40% es de ${descuento40}`);
 }
 
 let salir = false;
+let precio ;
 
 while (!salir){
     let opcion = elegirOpcionMenu();
-    switch (opcion){
+	
+	precio = prompt("Ingrese precio");
+    
+	switch (opcion){
         case "1":
             hacerUno();
             break;
